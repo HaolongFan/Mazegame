@@ -80,8 +80,8 @@ namespace Mazegame
             Location lounge =
                 new Location("an open space containing comfortable looking couches and artwork of dubious quality",
                     "Airport Lounge");
-            Location t127 = new Location("a lecture theatre", "T127");
-            Location gregsoffice = new Location("a spinning vortex of terror", "Greg's Office");
+            t127 = new Location("a lecture theatre", "T127");
+            gregsoffice = new Location("a spinning vortex of terror", "Greg's Office");
 
             startUp.AddExit("south", new Exit("you see an open space to the south", lounge));
             lounge.AddExit("north", new Exit("you see a mound of paper to the north", startUp));
@@ -106,9 +106,11 @@ namespace Mazegame
         //Creat Items
         private void CreateItems()
         {
-            gregsoffice.GetInventory().AddMoney(250);
-            gregsoffice.GetInventory().AddItem(new Item("A bag of gold", 2, 1, "A bag full with gold"));
-            gregsoffice.GetInventory().AddItem(new Item("final_exam", 2, 1000000000, "The answers to ITECH3201"));
+            var inverntory = gregsoffice.GetInventory();
+
+            inverntory.AddMoney(250);
+            inverntory.AddItem(new Item("A bag of gold", 2, 1, "A bag full with gold"));
+            inverntory.AddItem(new Item("final_exam", 2, 1000000000, "The answers to ITECH3201"));
         }
 
 

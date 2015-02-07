@@ -29,16 +29,6 @@ namespace Mazegame.Entity.Utility
             lookup[item] = modifier;
         }
 
-        public int GetModifier(int agility)
-        {
-            int maxAgility = lookup.Keys.Max();
-            if (agility > maxAgility)
-                return lookup[maxAgility];
-
-            if (lookup.Keys.Contains(agility))
-                return lookup[agility];
-            throw new AgilityTableException("Can't find corresponding modifier for that agility value");
-        }
     }
 
     public class itemTableException : Exception

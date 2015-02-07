@@ -24,8 +24,9 @@ namespace Mazegame.Entity
         private Inventory items;
         private readonly NonPlayerCharacterCollection characterList;
         private readonly ExitCollection exitCollection;
-        private String description;
-        private String label;
+
+        public string Description { get; set; }
+        public string Label { get; set; }
 
         public Location()
         {

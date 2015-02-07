@@ -35,7 +35,7 @@ namespace Mazegame.Entity
 
         public virtual bool AddItem(Item theItem)
         {
-            if (weightLimit > theItem.getWeight() + GetWeight())
+            if (weightLimit > theItem.GetWeight() + GetWeight())
                 return base.AddItem(theItem);
             return false;
         }
