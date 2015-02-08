@@ -13,6 +13,7 @@ namespace Mazegame.Entity
     public class Player : Character
     {
         private Location currentLocation;
+        private Inventory inventory = new Inventory();
 
         public Player()
         {
@@ -21,13 +22,19 @@ namespace Mazegame.Entity
         public Player(String name)
             : base(name)
         {
-
+            inventory.AddMoney(20);
         }
 
         public Location CurrentLocation
         {
             get { return currentLocation; }
             set { currentLocation = value; }
+        }
+
+        public Inventory Inventory
+        {
+            get { return inventory; }
+            set { inventory = value; }
         }
     }
 }

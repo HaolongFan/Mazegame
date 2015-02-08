@@ -56,6 +56,12 @@ namespace Mazegame.Entity
         }
         //
 
+        //get all NPC
+        public NonPlayerCharacterCollection GetNonPlayerCharacter()
+        {
+            return characterList;
+        }
+
         //get Inventory
         public Inventory GetInventory()
         {

@@ -30,7 +30,6 @@ namespace Mazegame.Control
             availableCommands.Add("attack", new AttackCommand());
             //Sell Command
             availableCommands.Add("sell", new SellCommand());
-           
             //buy Command
             availableCommands.Add("buy", new BuyCommand());
 

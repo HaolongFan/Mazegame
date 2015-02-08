@@ -12,7 +12,28 @@ namespace Mazegame.Control
         public override CommandResponse Execute(ParsedInput userInput,
             Player thePlayer)
         {
-            return new CommandResponse("You entered the buy command");
+            Inventory locationInventory = thePlayer.CurrentLocation.GetInventory();
+
+            if (userInput.Arguments.Count == 0)
+            {
+                return new CommandResponse(locationInventory.ToString() + "\r\nIf you want to buy items you need to tell me item name");
+            }
+
+            String itemLabel = (String)userInput.Arguments[0];
+
+            Item item = locationInventory.RemoveItem(itemLabel);
+
+            if (item != null)
+            {
+                thePlayer.Inventory.AddItem(item);
+                int itemWorth = item.GetWorth();
+                thePlayer.Inventory.RemoveMoney(itemWorth);
+                locationInventory.AddMoney(itemWorth);
+                return new CommandResponse("You already bought this item");
+            }
+
+            return new CommandResponse("You haven't bought anything.");
+
         }
     }
 }

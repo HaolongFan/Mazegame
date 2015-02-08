@@ -47,7 +47,7 @@ namespace Mazegame.Entity
                 return theItem;
             }
 
-            throw new ItemNotFoundException("That item isn't here to remove");
+            return null;
         }
 
         private string printItemList()
