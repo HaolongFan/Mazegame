@@ -90,9 +90,6 @@ namespace Mazegame.Entity
             return (Exit)exits[exitLabel];
         }
 
-       
-
-
         public String AvailableExits()
         {
             StringBuilder returnMsg = new StringBuilder();

@@ -23,6 +23,12 @@ namespace Mazegame.Control
                 return new CommandResponse("There is no exit there.. Trying moving someplace moveable!!");
             }
 
+            if (desiredExit.Blocked && !thePlayer.Inventory.ContainsItem("unblock item"))
+            {
+                return new CommandResponse("No exit for you because you don't have unbock items");
+            }
+
+
             thePlayer.CurrentLocation = desiredExit.Destination;
             return new CommandResponse("You successfully move " + exitLabel + " and find yourself somewhere else\n\n" + thePlayer.CurrentLocation.ToString());
         }

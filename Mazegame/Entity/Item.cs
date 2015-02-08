@@ -25,9 +25,7 @@ namespace Mazegame.Entity
             this.weight = weight;
             this.worth = worth;
         }
-        
-         
-
+  
         public int GetWorth()
         {
             return worth;

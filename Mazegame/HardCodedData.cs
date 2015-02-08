@@ -77,13 +77,14 @@ namespace Mazegame
             startUp =
                 new Location("an office with paper strewn everywhere, how anyone works effectively here is a mystery",
                     "Julies Office");
-            Location lounge =
+            lounge =
                 new Location("an open space containing comfortable looking couches and artwork of dubious quality",
                     "Airport Lounge");
             t127 = new Location("a lecture theatre", "T127");
             gregsoffice = new Location("a spinning vortex of terror", "Greg's Office");
 
-            startUp.AddExit("south", new Exit("you see an open space to the south", lounge));
+            // set this exit as blocked exit
+            startUp.AddExit("south", new Exit("you see an open space to the south", lounge){ Blocked = true });
             lounge.AddExit("north", new Exit("you see a mound of paper to the north", startUp));
 
             startUp.AddExit("west", new Exit("you see a terrifying office to the west", gregsoffice));

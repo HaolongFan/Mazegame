@@ -14,6 +14,9 @@ namespace Mazegame.Entity {
 	    private String description;
 	    private Mazegame.Entity.Location destination;
 
+        // if the exit is blocked
+        public bool Blocked { get; set; }
+
 		public Exit(String description, Location destination)
 		{
 		    Description = description;
